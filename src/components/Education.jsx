@@ -5,28 +5,13 @@ import Back from "../assets/back.svg";
 import { useNavigate } from "react-router-dom";
 
 const Education = () => {
-  const genreOptions = ["A1", "A2", "A3"];
   const [metadata, setMetadata] = useState({});
-  const [genreSuggestions, setGenreSuggestions] = useState(genreOptions);
-  const [isGenreInputFocused, setIsGenreInputFocused] = useState(false);
+  const [tutorName, setTutorName] = useState("");
   let keys = [...COMMON_KEYS, "Age", "Tutor", "Topic"];
 
   useEffect(() => {
     localStorage.clear();
   }, []);
-
-  const filterGenreSuggestions = (input) => {
-    const inputValue = input.trim().toLowerCase();
-    const inputLength = inputValue.length;
-    const suggestions =
-      inputLength === 0
-        ? []
-        : genreOptions.filter(
-            (option) =>
-              option.toLowerCase().slice(0, inputLength) === inputValue
-          );
-    setGenreSuggestions(suggestions);
-  };
 
   const handleChange = (e, key) => {
     const { value } = e.target;
@@ -39,19 +24,15 @@ const Education = () => {
       "metadata",
       JSON.stringify({ ...metadata, [key]: value })
     );
-
-    if (key === "Tutor") {
-      filterGenreSuggestions(value);
-    }
   };
 
   const listClickHandler = (e, key) => {
-    setMetadata({ ...metadata, Tutor: e.target.innerText });
-    setIsGenreInputFocused(!isGenreInputFocused);
+    setTutorName(e.target.value);
+    setMetadata({ ...metadata, Tutor: e.target.value });
 
     localStorage.setItem(
       "metadata",
-      JSON.stringify({ ...metadata, [key]: e.target.innerText })
+      JSON.stringify({ ...metadata, [key]: e.target.value })
     );
   };
 
@@ -62,25 +43,12 @@ const Education = () => {
           {key === "Title" ? key + "*" : key}
         </label>
         {key === "Tutor" ? (
-          <div className="autocomplete">
-            <input
-              type="text"
-              id={key}
-              value={metadata[key] || ""}
-              onChange={(e) => handleChange(e, key)}
-              onFocus={() => setIsGenreInputFocused(!isGenreInputFocused)}
-              className="input"
-            />
-            {isGenreInputFocused && (
-              <ul className="suggestion">
-                {genreSuggestions.map((genre, index) => (
-                  <li key={index} onClick={(e) => listClickHandler(e, key)}>
-                    {genre}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <select value={tutorName} onChange={(e) => listClickHandler(e, key)}>
+            <option value="">Select Tutor</option>
+            <option value="Nitin">Nitin</option>
+            <option value="Rajat">Rajat</option>
+            <option value="Mukesh">Mukesh</option>
+          </select>
         ) : (
           <input
             type="text"
@@ -119,7 +87,7 @@ const Education = () => {
         onClick={backHandleClick}
       />
       <div className="form-container">
-        <h1>Movie Metadata</h1>
+        <h1>Education Metadata</h1>
         <form onSubmit={handleSubmit}>
           {renderInputs()}
           <input className="submit" type="submit" value="Submit" />

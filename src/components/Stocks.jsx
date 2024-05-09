@@ -66,7 +66,7 @@ const Stocks = () => {
         onClick={backHandleClick}
       />
       <div className="form-container">
-        <h1>Stocks Metadata</h1>
+        <h1>Finance Metadata</h1>
         <form onSubmit={handleSubmit}>
           {renderInputs()}
           <input className="submit" type="submit" value="Submit" />

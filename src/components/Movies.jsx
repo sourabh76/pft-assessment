@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Movies = () => {
   const [metadata, setMetadata] = useState({});
   const [genreValue, setGenreValue] = useState("");
-  const [isGenreInputFocused, setIsGenreInputFocused] = useState(false);
   let keys = [...COMMON_KEYS, "Genre", "Cast", "Year", "Rating"];
 
   useEffect(() => {
@@ -30,7 +29,6 @@ const Movies = () => {
   const listClickHandler = (e, key) => {
     setGenreValue(e.target.value);
     setMetadata({ ...metadata, Genre: e.target.value });
-    setIsGenreInputFocused(!isGenreInputFocused);
 
     localStorage.setItem(
       "metadata",
