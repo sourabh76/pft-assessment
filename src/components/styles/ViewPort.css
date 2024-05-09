@@ -1,0 +1,72 @@
+.view-port {
+  position: relative;
+  height: 800px;
+  width: 800px;
+  margin: 50px auto;
+}
+
+.view-port h1 {
+  text-decoration: underline;
+}
+
+.view-port-group {
+  position: absolute;
+  border: 3px solid black;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.title {
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+.duration {
+  top: 20%;
+  left: 10%;
+}
+
+.language {
+  top: 20%;
+  left: 40%;
+}
+
+.genre {
+  top: 20%;
+  left: 20%;
+}
+
+.rating,
+.age,
+.target,
+.episode {
+  top: 20%;
+  left: 30%;
+}
+
+.cast,
+.tutor,
+.speaker {
+  top: 25%;
+  left: 10%;
+}
+
+.description {
+  top: 30%;
+  left: 10%;
+  right: 10%;
+}
+
+.year,
+.topic,
+.category {
+  top: 70%;
+  left: 10%;
+}
+
+.imageurl {
+  border: none;
+}

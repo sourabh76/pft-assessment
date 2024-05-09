@@ -1,0 +1,60 @@
+.form-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: rgb(170, 238, 238);
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group > select {
+  width: 90%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  width: 90%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit {
+  width: 75%;
+  margin-top: 50px;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+}
+
+.back-button {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 15px;
+  left: 100px;
+}
+
+.suggestion {
+  list-style-type: none;
+  border: 2px solid black;
+}
