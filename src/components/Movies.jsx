@@ -11,6 +11,7 @@ const Movies = () => {
 
   useEffect(() => {
     localStorage.clear();
+    localStorage.setItem("component", "Movies");
   }, []);
 
   const handleChange = (e, key) => {

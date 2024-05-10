@@ -10,6 +10,7 @@ const TVShows = () => {
 
   useEffect(() => {
     localStorage.clear();
+    localStorage.setItem("component", "TV Shows");
   }, []);
 
   const handleChange = (e, key) => {

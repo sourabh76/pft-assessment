@@ -10,6 +10,7 @@ const Stocks = () => {
 
   useEffect(() => {
     localStorage.clear();
+    localStorage.setItem("component", "Finance");
   }, []);
 
   const handleChange = (e, key) => {

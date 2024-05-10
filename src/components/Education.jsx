@@ -11,6 +11,7 @@ const Education = () => {
 
   useEffect(() => {
     localStorage.clear();
+    localStorage.setItem("component", "Education");
   }, []);
 
   const handleChange = (e, key) => {
